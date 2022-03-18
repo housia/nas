@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Aframe Transparent Video Shader</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="index.css">
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-transparent-video-shader@1.0.3/dist/aframe-transparent-video-shader.umd.js"></script>
+    <script src="./index.js"></script>
+  </head>  
+  <body>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    
+<center> <model-viewer camera-controls alt="A 3D model car" src="assets\Cyber.glb">
+    </model-viewer>  </center> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+        integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+        crossorigin="anonymous" />
+        
+    <a-scene>
+      <a-assets>
+        <video id="soccerPlayerVideo" src="output_7uN53FH.webm" unmuted loop="true"></video>
+      </a-assets>
+    
+      <a-entity
+        id="soccerPlayer"
+        material="shader: transparent-video; src: #soccerPlayerVideo"
+        geometry="primitive: plane;
+                  width: 1;
+                  height: 1.8"
+        position="0 1 -2">
+      </a-entity>
+      
+      <!-- <a-sky color="#6EBAA7"></a-sky> -->
+    </a-scene>
+    
+    <div id="video-message">
+      Click to start playing the video.
+    </div>
+  </body>
+</html>
